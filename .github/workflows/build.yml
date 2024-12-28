@@ -3,24 +3,11 @@ on:
    workflow_dispatch:
 
 jobs:
-    pre-commit:
-        name: DESKTOP-627L0OB
-        runs-on: self-hosted
-        steps:
-            -   name: Checkout git repository
-                uses: actions/checkout@v4.1.6
-            -   name: Setup python
-                uses: actions/setup-python@v5
-                with:
-                    python-version: "3.9"
-            -   uses: actions/setup-java@v4
-                with:
-                    distribution: 'temurin'
-                    java-version: '23'
+   
          
     build:
         runs-on:self-hosted
-        needs: [ pre-commit ]
+       
         strategy:
             fail-fast: true
             matrix:
